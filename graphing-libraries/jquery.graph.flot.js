@@ -1,18 +1,32 @@
 /*
  * Flot jQuery.graph() library integration
  */ 
-jQuery.graph.typeFlot = function(object, data) {
+ 
+jQuery.graph.graphingLibraries['Flot'] = { callback: 'flot'};
+
+jQuery.graph.graphingLibrary.flot = function(data, graphSettings) {
+  var defaultConfig = {
+    legend: {
+        show: true,
+        margin: [10, 10],
+        backgroundOpacity: 0.5,
+        position: 'nw',
+    },
+    points: {
+     show: false,
+     radius: 3
+    },
+    lines: {
+      show: true,
+      lineWidth: 10
+    }
+  }
+  if (graphSettings.graphOptions == null) graphSettings.graphOptions = defaultConfig;
   // Manipulate data structure to work with FLOT
-  jQuery.fn.graph.order.push('in flot');
   var dataSets = new Array;
   for( var x in data) {
     dataSets.push(data[x]);
   }
-  // Generate the graph
-  // object.flot(data, options);
-  // object.flot(data);
-  // $.plot(object, data, options);
-  // debugger;
-  $.plot(object, dataSets, [ data['China'] ]);
+  $.plot(graphSettings.selection, dataSets, graphSettings.graphOptions);
 };
 
