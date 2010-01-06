@@ -1,11 +1,3 @@
-// $('div#graph3').graph({library: 'Flot'}).epiAPI(pyql);
-// $('div#graph3').graph({ library: { name: 'Flot', options: graphingOption }, source: { name: 'epiAPI', options: sourceOptions } });
-// for debugging
-// jQuery.fn.graph.order = new Array();
-
-// $('div#graph3').graph({graph-library: 'Flot', graph-options: '', data-source: 'epiAPI', data-source-options: ''});
-
-//$('div#graph3').graph({ graphLibrary: 'Flot', graphOptions: null, dataSource: 'EPI API', dataSourceOptions: { pyql: pyql } });
 
 jQuery.graph = {};
 
